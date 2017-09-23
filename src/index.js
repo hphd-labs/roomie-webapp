@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reducers from './reducers';
 
 //Containers
+import LoginContainer from './containers/login_container';
 
 //Components
 import SplashPage from './components/splash_index';
@@ -19,6 +20,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
+          <Route path ="/login" component={LoginContainer} />
           <Route path="/" component={SplashPage}/>
         </Switch>
       </div>
