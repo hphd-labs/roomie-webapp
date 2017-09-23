@@ -8,8 +8,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reducers from './reducers';
 
 //Containers
-import LoginContainer from './containers/login'
-//components
+
+//Components
 import SplashPage from './components/splash_index';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -19,7 +19,6 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/login"/>
           <Route path="/" component={SplashPage}/>
         </Switch>
       </div>
