@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+import { submitLogin } from '../actions/index';
 
 class LoginForm extends Component {
   //Render the actual fields defined below
@@ -26,10 +27,15 @@ class LoginForm extends Component {
     )
   }
 
+  onSubmit(values){
+    this.props.submitLogin(values).then(console.log)
+  }
   render(){
+    const { handleSubmit } = this.props;
+
     //Return a login Form
     return(
-      <form>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
           label = "Enter your email address"
           name = "email"
@@ -66,4 +72,6 @@ function validate(values){
 export default reduxForm({
   validate,
   form: 'LoginForm'
-})(LoginForm)
+})(
+  connect(null,  {submitLogin})(LoginForm)
+)
