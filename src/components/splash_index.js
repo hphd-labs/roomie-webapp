@@ -6,7 +6,7 @@ export default class SplashPage extends Component {
       <div>
         <h1>Roomie</h1>
         <h3>The app for room-mates</h3>
-        <img className="center-block" src="./room.png"></img>
+        <img className="center-block" src="./dist/room.png"></img>
       </div>
     );
   }
