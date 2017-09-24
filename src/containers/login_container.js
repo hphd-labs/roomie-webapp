@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import LoginForm from '../components/login_form'
 
 class LoginContainer extends Component {
   render(){
     return (
-      <h1>Login page scaffold.</h1>
+      <LoginForm />
     )
   }
 }
