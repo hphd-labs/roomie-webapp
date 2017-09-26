@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/hphd-labs/roomie-webapp/",
   "scripts": {
-    "build": "webpack",
+    "build": "./node_modules/.bin/webpack",
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start": "node app.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
