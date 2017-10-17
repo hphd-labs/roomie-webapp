@@ -6,7 +6,6 @@ import { AUTH_USER, AUTH_ERROR } from './types';
 const ROOT_URL='http://localhost:3000'
 
 export function signinUser({email, password}, history){
-  console.log("HERE!");
   return function(dispatch){
     // Submit email/password to the server
     axios.post(`${ROOT_URL}/signin`, { email, password })
@@ -17,14 +16,21 @@ export function signinUser({email, password}, history){
       // -- Save JWT token
       localStorage.setItem('token', response.data.token);
       // -- Redirect to the route '/feature'
-      console.log("REDIRECT!");
       history.push('/');
     })
 
-    // .catch(()=> {
-    //   //If request is bad ....
-    //   // -- Show an error to the user.
-    //   dispatch(authError('Bad Login Info'));
-    // })
+    .catch(()=> {
+      //If request is bad ....
+      // -- Show an error to the user.
+      dispatch(authError('Bad Login Info'));
+    })
+  }
+}
+
+
+export function authError(error){
+  return {
+    type: AUTH_ERROR,
+    payload: error
   }
 }
