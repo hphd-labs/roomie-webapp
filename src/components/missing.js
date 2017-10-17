@@ -7,7 +7,7 @@ export default class Missing extends Component {
     return(
       <div>
         <h1>Uh-Oh</h1>
-        <p>There's nothing here</p>
+        <p>Theres nothing here</p>
       </div>
     );
   }

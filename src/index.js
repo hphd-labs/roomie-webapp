@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import reduxThunk from 'redux-thunk';
 
 //Reducers
 import reducers from './reducers';
@@ -15,7 +16,7 @@ import SplashPage from './components/splash_index';
 import Signin from './components/signin';
 import Missing from './components/missing';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
